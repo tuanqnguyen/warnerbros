@@ -1,0 +1,42 @@
+- Report the number of crimes from a given area. (Ex, if I want the number of crimes in the SouthWest area, it should return the number.
+
+/crimes/count/area/SouthWest
+SELECT COUNT(1) AS total_crimes FROM reported_crimes WHERE area_name = 'SouthWest';
+
+/crimes/count/area/West_Valley
+SELECT COUNT(1) AS total_crimes FROM reported_crimes WHERE area_name = 'West Valley';
+Hyphen dashes are replaced with a blank space (West_Valley -> West Valley)
+
+- Show the Addresses (Street City Zip) for a given crime type. (Ex, if you are looking for Battery – Simple Assault, it should return all the addresses).
+
+/crimes/address/all/crime_comitted/description/battery_-_simple_assault
+SELECT location, cross_street FROM reported_crimes WHERE crime_comitted_description = 'BATTERY - SIMPLE ASSAULT';
+
+/crimes/address//page/1/crime_comitted/description/battery_-_simple_assault
+SELECT location, cross_street FROM reported_crimes WHERE crime_comitted_description = 'BATTERY - SIMPLE ASSAULT' ORDER BY date_comitted DESC LIMIT 0, 1000;
+
+/crimes/address/page/2/crime_comitted/description/battery_-_simple_assault
+SELECT location, cross_street FROM reported_crimes WHERE crime_comitted_description = 'BATTERY - SIMPLE ASSAULT' ORDER BY date_comitted DESC LIMIT 1000, 1000;
+
+/crimes/address/page/3/crime_comitted/description/battery_-_simple_assault
+SELECT location, cross_street FROM reported_crimes WHERE crime_comitted_description = 'BATTERY - SIMPLE ASSAULT' ORDER BY date_comitted DESC LIMIT 2000, 1000;
+
+/crimes/address/crime_comitted/code/624
+SELECT location, cross_street FROM reported_crimes WHERE crime_comitted_code = 624;
+
+/crimes/address/page/1crime_comitted/code/624
+SELECT location, cross_street FROM reported_crimes WHERE crime_comitted_code = 624 ORDER BY date_comitted DESC LIMIT 0, 1000;
+
+/crimes/address/page/2/crime_comitted/code/624
+SELECT location, cross_street FROM reported_crimes WHERE crime_comitted_code = 624 ORDER BY date_comitted DESC LIMIT 1000, 1000;
+
+/crimes/address/page/3/crime_comitted/code/624
+SELECT location, cross_street FROM reported_crimes WHERE crime_comitted_code = 624 ORDER BY date_comitted DESC LIMIT 2000, 1000;
+
+- Report the number of crimes for a given crime.
+
+/crimes/count/crime_committed/description/battery_-_simple_assault
+SELECT COUNT(1) AS total_crimes FROM reported_crimes WHERE crime_comitted_description = 'BATTERY - SIMPLE ASSAULT';
+
+/crimes/count/crime_committed/code/624
+SELECT COUNT(1) AS total_crimes FROM reported_crimes WHERE crime_comitted_code = 624;

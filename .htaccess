@@ -1,0 +1,15 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+# Count API Call URLs
+RewriteRule ^crimes/count/area/([A-Za-z0-9-_]+)$ api.php?type=count&area_name=$1 [L]
+RewriteRule ^crimes/count/crime_committed/description/([A-Za-z0-9-_]+)$ api.php?type=count&crime_committed_description=$1 [L]
+RewriteRule ^crimes/count/crime_committed/code/([0-9]+)$ api.php?type=count&crime_committed_code=$1 [L]
+
+# Address API Call URLs
+RewriteRule ^crimes/address/all/crime_committed/description/([A-Za-z0-9-_]+)$ api.php?type=address&records=all&crime_committed_description=$1 [L]
+RewriteRule ^crimes/address/all/crime_committed/code/([0-9]+)$ api.php?type=address&records=all&crime_committed_code=$1 [L]
+RewriteRule ^crimes/address/page/([0-9]+)/crime_committed/description/([A-Za-z0-9-_]+)$ api.php?type=address&page=$1&crime_committed_description=$2 [L]
+RewriteRule ^crimes/address/page/([0-9]+)/crime_committed/code/([0-9]+)$ api.php?type=address&page=$1&crime_committed_code=$2 [L]
+
+ErrorDocument 404 /warnerbros/error/404.php

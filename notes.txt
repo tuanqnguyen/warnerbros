@@ -1,0 +1,21 @@
+Notes
+
+This exercise uses plain vanilla PHP to write the API using MAMP on localhost
+
+Access index.php to see a list of sample API call URLs that you can click on to see the API working
+
+The crime data used is from:
+https://catalog.data.gov/dataset/crime-data-from-2020-to-present
+
+And was downloaded as a CSV file here and placed here:
+/database/Crime_Data_from_2020_to_Present.csv
+
+The SQL file to import the data into a MySQL database is located here:
+/database/reported_crimes.sql
+
+An import script was written to format the data and then insert it into a table
+
+A database connection is established using MySQLi and uses prepared statements with parameritized queries to prevent SQL injection
+
+A list of API call URLs and the queries that they run against the database are found at:
+api_calls.txt
