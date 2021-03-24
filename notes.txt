@@ -10,12 +10,14 @@ https://catalog.data.gov/dataset/crime-data-from-2020-to-present
 And was downloaded as a CSV file here and placed here:
 /database/Crime_Data_from_2020_to_Present.csv
 
-The SQL file to import the data into a MySQL database is located here:
-/database/reported_crimes.sql
+The zipped SQL file to import the data into a MySQL database is located here:
+/database/reported_crimes.zip
+
+Unzip the file first and then import into MySQL.
 
 An import script was written to format the data and then insert it into a table
 
-A database connection is established using MySQLi and uses prepared statements with parameritized queries to prevent SQL injection
+A database connection is established using MySQLi and uses prepared statements with parameterized queries to prevent SQL injection
 
 A list of API call URLs and the queries that they run against the database are found at:
 api_calls.txt
